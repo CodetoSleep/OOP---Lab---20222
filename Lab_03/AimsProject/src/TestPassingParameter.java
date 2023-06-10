@@ -1,6 +1,4 @@
-package Lab_03.AimsProject.src.lab02;
-
-import java.util.Objects;
+package Lab_03.AimsProject.src;
 
 public class TestPassingParameter {
     public static void main(String[] args) {

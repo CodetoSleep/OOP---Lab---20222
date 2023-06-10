@@ -1,4 +1,4 @@
-package Lab_03.AimsProject.src.lab02;
+package Lab_03.AimsProject.src;
 import lab02.DigitalVideoDisc;
 
 import java.util.Objects;
@@ -60,5 +60,41 @@ public class Cart {
             total += itemsOrdered[i].getCost();
         }
         return total;
+    }
+
+    public void printListofCart(){
+        System.out.println("***********************CART***********************");
+        for(int i = 0; i < qtyOrdered; i++){
+            System.out.println(i-1+". "+itemsOrdered[i].getId() + " - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + " : " + itemsOrdered[i].getCost());
+        }
+        System.out.println("Total cost: "+totalCost());
+    }
+
+    public void searchID(int id){
+        int exist = 0;
+        for (int i = 0; i < qtyOrdered; i++){
+            if (itemsOrdered[i].getId() == id){
+                System.out.println(itemsOrdered[i].getId() + ". DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + " $");
+                exist++;
+                break;
+            }
+        }
+        if (exist == 0){
+            System.out.println("Not found!");
+        }
+    }
+
+    public void searchTitle(String title){
+        int exist = 0;
+        for (int i = 0; i < qtyOrdered; i++){
+            if (itemsOrdered[i].getTitle().equals(title)){
+                System.out.println(itemsOrdered[i].getId() + ". DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + " $");
+                exist++;
+                break;
+            }
+        }
+        if (exist == 0){
+            System.out.println("Not found!");
+        }
     }
 }
