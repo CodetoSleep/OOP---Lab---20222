@@ -1,4 +1,4 @@
-package Lab_01;
+package lab01;
 import java.util.Scanner;
 public class Sort {
     public static void main(String[] args) {

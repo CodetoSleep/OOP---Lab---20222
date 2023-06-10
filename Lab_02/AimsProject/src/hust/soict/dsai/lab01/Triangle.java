@@ -1,5 +1,4 @@
-package Lab_01;
-import java.util.Objects;
+package lab01;
 import java.util.Scanner;
 public class Triangle {
     public static void main(String[] args) {
