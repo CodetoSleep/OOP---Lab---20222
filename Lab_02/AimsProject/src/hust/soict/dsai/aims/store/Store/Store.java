@@ -1,4 +1,6 @@
-package lab02;
+package hust.soict.dsai.aims.store.Store;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
 
 public class Store {
     public static final int Max_number_ordered = 20;

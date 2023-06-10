@@ -1,5 +1,6 @@
-package lab02;
-import java.util.Objects;
+package hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+
 public class Cart {
     public static final int Max_number_ordered = 20;
     int qtyOrdered = 0;
