@@ -36,6 +36,47 @@ public class Cart {
         }
         qtyOrdered--;
     }
+
+    public void searchID(int id){
+        int exist = 0;
+        for (int i = 0; i < qtyOrdered; i++){
+            if (itemsOrdered[i].getId() == id){
+                System.out.println(itemsOrdered[i].getId() + ". DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + " $");
+                exist++;
+                break;
+            }
+        }
+        if (exist == 0){
+            System.out.println("Not found!");
+        }
+    }
+
+    public void searchTitle(String title){
+        int exist = 0;
+        for (int i = 0; i < qtyOrdered; i++){
+            if (itemsOrdered[i].getTitle().equals(title)){
+                System.out.println(itemsOrdered[i].getId() + ". DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + " $");
+                exist++;
+                break;
+            }
+        }
+        if (exist == 0){
+            System.out.println("Not found!");
+        }
+    }
+
+    public void print(){
+        if(qtyOrdered == 0) System.out.println("Empty");
+        else{
+            System.out.println("***********************CART***********************");
+            for(int i = 0; i < qtyOrdered; i++){
+                System.out.println(itemsOrdered[i].getId() + ". DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + " $");
+            }
+            System.out.println("Total cost: " + totalCost());
+            System.out.println("***************************************************");
+        }
+
+    }
     public float totalCost(){
         float total = 0;
         for(int i = 0; i < qtyOrdered; i++){
