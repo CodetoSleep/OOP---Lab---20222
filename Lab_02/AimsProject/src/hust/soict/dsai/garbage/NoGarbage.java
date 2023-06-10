@@ -19,5 +19,6 @@ public class NoGarbage {
         }
         endTime = System.currentTimeMillis();
         System.out.println(endTime - startTime);
+
     }
 }
