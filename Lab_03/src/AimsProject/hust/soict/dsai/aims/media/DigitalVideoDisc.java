@@ -1,5 +1,7 @@
 package Lab_03.src.AimsProject.hust.soict.dsai.aims.media;
 
+import Lab_03.src.AimsProject.hust.soict.dsai.aims.exception.PlayerException;
+
 public class DigitalVideoDisc extends Disc implements Playable{
     public DigitalVideoDisc(String title) {
         super(title);
@@ -17,9 +19,13 @@ public class DigitalVideoDisc extends Disc implements Playable{
         super(title, category, director, length, cost);
     }
 
-    @Override
-    public void Play() {
-        System.out.println("Playing DVD: " + this.getTitle());
-        System.out.println("DVD length: " + this.getLength());
+    public void Play() throws PlayerException {
+        if (getLength() > 0) {
+            System.out.println("Playing DVD: " + getTitle());
+            System.out.println("DVD length: " + getLength());
+        } else {
+            throw new PlayerException("DVD length is non-positive");
+        }
     }
+
 }

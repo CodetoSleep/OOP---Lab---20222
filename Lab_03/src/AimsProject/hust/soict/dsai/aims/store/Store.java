@@ -3,6 +3,7 @@ package Lab_03.src.AimsProject.hust.soict.dsai.aims.store;
 import Lab_03.src.AimsProject.hust.soict.dsai.aims.media.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Store {
     public static final int Max_number_ordered = 20;
@@ -38,6 +39,10 @@ public class Store {
         return null;
     }
 
+    private ArrayList<Media> itemsInStore = new ArrayList<>();
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
 
     public void display(){
         if (itemOrdered.size() == 0){

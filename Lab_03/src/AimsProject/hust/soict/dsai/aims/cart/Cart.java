@@ -1,12 +1,21 @@
 package Lab_03.src.AimsProject.hust.soict.dsai.aims.cart;
 
 import Lab_03.src.AimsProject.hust.soict.dsai.aims.media.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Cart {
     public static final int Max_number_ordered = 20;
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+
+    private ObservableList<Media> itemsOrdereded = FXCollections.observableArrayList();
+
+    public ObservableList<Media> getItemsOrdereded() {
+        return itemsOrdereded;
+    }
 
     public void addMedia(Media disc){
         if(itemsOrdered.size()==Max_number_ordered) System.out.println("The cart is full");

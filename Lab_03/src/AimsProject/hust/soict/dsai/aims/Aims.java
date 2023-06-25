@@ -1,8 +1,10 @@
 package Lab_03.src.AimsProject.hust.soict.dsai.aims;
 
 import Lab_03.src.AimsProject.hust.soict.dsai.aims.cart.*;
+import Lab_03.src.AimsProject.hust.soict.dsai.aims.exception.PlayerException;
 import Lab_03.src.AimsProject.hust.soict.dsai.aims.store.*;
 import Lab_03.src.AimsProject.hust.soict.dsai.aims.media.*;
+
 
 import java.util.Scanner;
 
@@ -75,7 +77,7 @@ public class Aims {
         System.out.println("Please choose a number: 1-2");
     }
 
-    public static Media searchMediaByName(Store store) {
+    public static Media searchMediaByName(Lab_03.src.AimsProject.hust.soict.dsai.aims.store.Store store) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter media's name: ");
         String mediaName = scanner.nextLine();
@@ -89,7 +91,7 @@ public class Aims {
         return cart.findByTitle(mediaName);
     }
 
-    public static void seeCurrentCart(Cart anOrder) {
+    public static void seeCurrentCart(Cart anOrder) throws PlayerException {
         Scanner scanner = new Scanner(System.in);
         int choice4;
         do {
@@ -140,7 +142,7 @@ public class Aims {
         } while (choice4 != 0);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         Scanner scanner = new Scanner(System.in);
 
         Store store = new Store();
